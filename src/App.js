@@ -10,11 +10,11 @@ function App() {
   const [ todos, setTodos ] = useState([]);
   const [ noneCompletedItemsCount, setNoneCompletedItemsCount ] = useState(0);
 
-  useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/todos')
-        .then( response => response.json())
-        .then(setTodos)
-  }, []);
+  // useEffect(() => {
+  //   fetch('https://jsonplaceholder.typicode.com/todos')
+  //       .then( response => response.json())
+  //       .then(setTodos)
+  // }, []);
 
   useEffect(() => {
       const uncompleted = todos.filter( todo => !todo.completed );
