@@ -1,19 +1,17 @@
-import React from 'react';
-export function Main(){
-return (
+import {TodosList} from "./TodosList";
 
-<section class="main">
-    <input class="toggle-all"
-           type="checkbox" />
-    <ul class="todo-list">
-        <li>
-            <div class="view">
-                <input class="toggle"
-                       type="checkbox" />
-                <label>Todo Title</label>
-                <button class="destroy" />
-            </div>
-            <input class="edit" />
-        </li>
-    </ul>
-</section>)}
+export function Main({ items, onToggleAll }) {
+
+  function handleToggleAll(event) {
+    onToggleAll(event.target.checked);
+  }
+
+  return (
+      <section className="main">
+        <input className="toggle-all"
+               onChange={handleToggleAll}
+               type="checkbox"/>
+        <TodosList items={items}/>
+      </section>
+  );
+}

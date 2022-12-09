@@ -1,10 +1,12 @@
-import React from 'react';
-export function Footer(){
-return (
-
-
-<footer class="footer">
-    <span class="todo-count"><strong>0</strong> items left</span>
-    <button class="clear-completed">Clear completed
-    </button>
-</footer>)}
+export function Footer({ onClearCompleted, itemLeftCount }) {
+    return (
+        <footer className="footer">
+          <span className="todo-count">
+            <strong>{ itemLeftCount }</strong> items left</span>
+          <button
+              onClick={onClearCompleted}
+              className="clear-completed">Clear completed
+          </button>
+        </footer>
+    );
+  }
